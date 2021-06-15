@@ -1,0 +1,92 @@
+body{
+    padding: 50px;
+    background-color: #EAEBED;
+}
+.head{
+    font-weight: bold;
+}
+.center{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#logo{
+    width: 100%;
+    height: 120px;
+}
+.float-left{
+    float: left;
+}
+table td span.center-text{
+    margin-left: 50%;
+    margin-right: auto;
+}
+table td input.center-text{
+    margin-left:50%;
+    
+}
+.align-right{
+    text-decoration: underline;
+    text-align: right;
+}
+.title{
+    padding-bottom: 10px;
+    border-bottom: 10px solid black;
+}
+.align-center{
+    text-align: center;
+}
+.main-table h1{
+    color: blue;
+    font-weight: bold;
+}
+/* .main-table{
+    margin-left: auto;
+    margin-right: auto;
+} */
+.form-table{
+    width: 100%;
+    border: 2px solid black;
+}
+
+.space span{
+    margin-right: 25%;
+    
+}
+.space input{
+    margin-left: 25px;
+}
+.form-table .picture-box{
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+}
+.picture-box{
+    margin-left: auto;
+}
+.picture-box p{
+    margin-top: 60px;
+
+}
+ hr{
+    width: 200px;
+} 
+.td-bg{
+    color: blue;
+    font-weight: bold;
+    background-color: #92DCE5;
+    padding: 10px;
+}
+ .input{
+    width: 95%;
+    padding: 3px;
+}
+.profile input{
+    width: 90%;
+    padding: 3px;
+}
+#others{
+    display: inline;
+    width: 100px;
+    
+}

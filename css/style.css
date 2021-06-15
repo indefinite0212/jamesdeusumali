@@ -1,0 +1,427 @@
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth; /*Use for smooth scroll behavior*/
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FBFBFF;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    overflow-y: scroll; /*If the Y-Axis overflow, scroll bar will show*/
+}
+h2{
+    font-size: 30px;
+    letter-spacing: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.aside-nav {
+    height: 100%;
+    width: 0; /* for hiding the side nav*/
+    position: fixed; /*for fixed position, so that it is still in the side when scrolling*/
+    z-index: 2;/* use for it to be visible on top */
+    top: 0; /*so that the side nav will start at top 0 or 0padding and margin*/
+    left: 0;/*so that the side nav will start at left 0 or 0 padding and margin*/
+    background-color: #111;
+    overflow-x: hidden;/* When text in the side nav overflow in x-axis it will be hidden*/
+    transition: all 1s ease-in-out;/*Transition in opening and closing the side nav*/
+    padding-top: 60px;
+    color: white;
+}
+
+#close-icon, #drop-icon {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    padding: 30px;
+}
+
+#show-icon {
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid white;
+}
+
+#show-icon:hover {
+    background-color: #6c9a8b;
+}
+
+#show, #close, #drop {
+    visibility: hidden; /*Use to hide the input checkbox and radio button*/
+}
+
+#show:checked ~ .aside-nav { /*~ use to select the preceded .aside-nav or use to select the class after the input radio button show*/
+    display: block;
+    z-index: 1; /*Z-index use to indicate the stack order. The higher the number meaning it should be on top of something*/
+    width: 250px; 
+    /*This block of code is for opening the side nav*/
+}
+
+#close:checked~.aside-nav {
+    display: none;
+    background: rgb( 40, 44, 47);
+    opacity: 0.7; /*Transparency of the side nav when closing*/
+}
+
+.aside-nav ul li {
+    list-style-type: none; /*Removes the style of the list eg bullet and numbers*/
+    font-size: 20px;
+    border-bottom: 2px solid white !important;
+}
+
+.aside-nav ul li a {
+    padding: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none; /*Removes the default underline in an a element*/
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.aside-nav ul li:hover {
+    background-color: #333533;
+}
+
+#drop-show a {
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: black;
+}
+
+#drop-show a:hover {
+    cursor: pointer;
+    background-color: rgb(172, 172, 172);
+}
+#drop-show {
+    display: none;
+    width: 0;
+    height: 0;
+    background-color: white;
+    padding: 10px;
+}
+
+#drop-icon:active {
+    background-color: #333533;
+}
+
+#drop:checked~#drop-show {
+    /*For showing the option for dropdown*/
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    color: black;
+}
+
+.top-nav {
+    position: fixed; /*Use to position the top nav as fixed, meaning even when the user scroll it will still be visible at the top*/
+    top: 0;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    z-index: 1;
+}
+
+.top-nav ul {
+    padding: 20px;
+    background-color: #0d1317;
+    display: flex; /*Use as declaration when you are using flexbox*/
+    justify-content: space-between; /*Space between horizontal content of the top nav ul*/
+}
+
+.top-nav ul li {
+    list-style-type: none;
+}
+
+.center {
+    text-align: center;
+}
+
+#home {
+    margin-top: 45px;
+}
+
+#home .name {
+    padding: 60px;
+    background-color: #253237;
+    color: white;
+}
+
+#home .name h1 {
+    letter-spacing: 5px;
+    font-size: 50px;
+}
+
+#home .name p {
+    letter-spacing: 5px;
+    font-size: 25px;
+}
+
+#home .video-wrapper {
+    margin: 20px 50px 50px 50px;
+    display: flex;
+    justify-content: center; /*Center content in x axis direction*/
+    align-items: center;/*Center Items in y axis direction*/
+    
+}
+#home .video-wrapper section{
+    height: 500px;
+    width: 50%;
+}
+#home .video-wrapper section video {
+    height: 500px;
+    width: 100%;
+}
+
+#home .video-wrapper article {
+    background-color: #E0E1DD;
+    padding: 30px;
+    width: 50%;
+    border-radius: 10px; /*corner*/
+}
+
+.task-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.task-wrapper .screenshot img {
+    width: 100%;
+    height: 350px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.task-wrapper .task-sheet {
+    margin-left: 10px;
+}
+
+.task-wrapper h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.task-wrapper .title h3 {
+    padding: 20px;
+    background-color: rgb(197, 197, 197);
+}
+.task-wrapper .title h3:hover {
+    color: white;
+    background-color: rgb(37, 36, 36);
+}
+.task-wrapper .title p {
+    padding: 20px;
+    text-align: justify;
+    border: 2px solid black;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+}
+
+.contact-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: #0d1317;
+    color: white;
+    font-size: 25px;
+   
+}
+
+.contact-wrap ul li {
+    list-style-type: none;
+}
+
+.contact-wrap ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact-wrap ul li a {
+    color: white;
+}
+
+.contact-wrap ul li a:hover {
+    background-color: #333533;
+}
+
+
+/* contact.html - css starts here */
+
+#contact-form {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    
+}
+.form form{
+    border-left: 5px solid rgb(0, 30, 87);
+}
+.form h1 {
+    font-size: 30px;
+}
+
+.form form input, textarea {
+    display: block;
+    width: 100%;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+    resize: none;
+}
+.form form input:focus, textarea:focus {
+  background-color: #bcc4c7;
+}
+.form form button {
+    display: block;
+    width: 100%;
+    margin: 10px 20px 20px 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: #14213d;
+    color: white;
+    font-family: cursive;
+    cursor: pointer;
+}
+
+/* about.html - css starts here */
+#about{
+    margin-top: 60px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+}
+
+.picture{
+    width: 60%;
+}
+#about .picture img{
+    width: 100%;
+    height: auto;
+    border: 5px solid black;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+#about .info{
+    width: 100%;
+    padding: 20px;
+}
+.justify{
+    text-align: justify;
+}
+
+/* Projects css starts here */
+#projects{
+    margin-top: 60px;
+    margin-bottom: 80px !important;
+}
+.projects-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin: 50px;
+}
+.projects-wrapper > div{
+    width: 50%;
+    height: 500px;
+    margin-right: 20px;
+}
+.projects-wrapper .project-sheet .screenshot video{
+    height: 400px;
+    width: 100%;
+    border: 3px solid black;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.projects-wrapper h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.projects-wrapper .title h3 {
+    padding: 20px;
+    background-color: rgb(197, 197, 197);
+}
+.projects-wrapper .title h3:hover {
+    color: white;
+    background-color: rgb(37, 36, 36);
+}
+.projects-wrapper .title p {
+    padding: 10px;
+    text-align: justify;
+    border: 2px solid black;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+/*The following code will be use when the media or the screen of the user is equal or less than to 800px*/
+@media (max-width: 800px) {
+    
+    #home .video-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+    #home .video-wrapper section{
+        height: 500px;
+        width: 100%;
+    }
+    #home .video-wrapper section video {
+        height: 500px;
+        width: 100%;
+    }
+    
+    #home .video-wrapper article {
+        background-color: #e2e2e2;
+        padding: 20px;
+        width: 100%;
+    }
+    .task-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    #about{
+        margin-top: 60px;
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .picture{
+        width: 100%;
+    }
+    .projects-wrapper {
+        display: flex;
+        margin: 50px;
+        flex-direction: column;
+    }
+    .projects-wrapper > div{
+        width: 100%;
+        height: auto;
+    }
+    .projects-wrapper .project-sheet .screenshot video{
+        height: 300px;
+        width: 100%;
+        border: none;
+    }
+}

@@ -1,0 +1,40 @@
+body{
+    padding: 50px;
+    background-color: #D6EFFF;
+}
+
+.align-center{
+    text-align: center;
+}
+.table-box{
+    width: 100%;
+    overflow-x:auto;
+}
+table{
+
+    margin-left: auto;
+    margin-right: auto;
+}
+table td{
+    padding: 2px;
+    height:20px;
+}
+.cell{
+    width: 25px;
+    height: 20px;
+} 
+#cellSno,#cellName{
+    width: 100px !important;
+}
+.tg{
+    width: 100% !important;
+}
+.bg-1{
+    background-color: #A9E190;
+}
+.bg-2{
+    background-color: #FE654F;
+}
+.td-h{
+    height: 50px;
+}
